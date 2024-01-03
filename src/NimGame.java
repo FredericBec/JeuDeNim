@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,11 +8,11 @@ public class NimGame {
 	public static void main(String[] args) {
 		
 		
-		playerChoice();
+		firstPlayer();
 		
 	}
 	
-	public static void playerChoice() {
+	public static void firstPlayer() {
 		String playerOne, playerTwo;
 		
 		System.out.println("Joueur 1, quel est votre nom?");
