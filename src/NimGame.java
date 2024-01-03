@@ -23,14 +23,13 @@ public class NimGame {
 			System.out.println("Joueur " + currentPlayer + ", choisissez un nombre d'allumette");
 			int matchesNumber = scan.nextInt();
 			
-			if(validMove(matchesNumber)) {
-				removeMatches(matchesNumber);
-				currentPlayer = currentPlayer.equals(playerOne) ? playerTwo : playerOne;
-			}else System.out.println("Nombre d'allumettes non valide !!");
+			if(matchesCount != 0) {
+				if(validMove(matchesNumber)) {
+					removeMatches(matchesNumber);					
+					currentPlayer = currentPlayer.equals(playerOne) ? playerTwo : playerOne;
+				}else System.out.println("Nombre d'allumettes non valide !!");
+			}else System.out.println("le joueur " + currentPlayer + " a pris la dernière allumette");
 		}
-		System.out.println("le joueur " + currentPlayer + " a pris la dernière allumette");
-		
-		
 		
 	}
 	
