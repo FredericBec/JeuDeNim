@@ -18,19 +18,21 @@ public class NimGame {
 		String currentPlayer = firstPlayer(playerOne, playerTwo);
 		System.out.println(currentPlayer);
 		
-		while(matchesCount > 0) {
+		while(matchesCount != 0 ) {
 			System.out.println("Allumette restantes :" + matchesCount);
 			System.out.println("Joueur " + currentPlayer + ", choisissez un nombre d'allumette");
 			int matchesNumber = scan.nextInt();
-			
-			if(matchesCount != 0) {
-				if(validMove(matchesNumber)) {
-					removeMatches(matchesNumber);					
+
+			if(validMove(matchesNumber)) {
+				removeMatches(matchesNumber);
+				if(matchesCount != 0) {					
 					currentPlayer = currentPlayer.equals(playerOne) ? playerTwo : playerOne;
-				}else System.out.println("Nombre d'allumettes non valide !!");
-			}else System.out.println("le joueur " + currentPlayer + " a pris la dernière allumette");
+				}
+			}else System.out.println("Nombre d'allumettes non valide !!");
 		}
 		
+		System.out.println("le joueur " + currentPlayer + " a pris la dernière allumette");
+
 	}
 	
 	public static String firstPlayer(String playerOne, String playerTwo) {
